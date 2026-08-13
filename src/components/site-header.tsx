@@ -49,7 +49,11 @@ export function SiteHeader() {
             <Link
               key={item.to}
               to={item.to}
-              className="group relative px-3 py-2 text-sm font-medium text-foreground/75 transition-colors hover:text-foreground"
+              className={`group relative px-3 py-2 text-sm font-medium transition-colors ${
+                scrolled
+                  ? "text-foreground/75 hover:text-foreground"
+                  : "text-forest-foreground/75 hover:text-forest-foreground"
+              }`}
               activeProps={{ className: "text-primary" }}
               activeOptions={{ exact: item.to === "/" }}
             >
@@ -60,7 +64,12 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Button variant="ghost" size="sm" onClick={requestCatalog} className="group">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={requestCatalog}
+            className={`group ${scrolled ? "" : "text-forest-foreground hover:bg-forest-foreground/10 hover:text-forest-foreground"}`}
+          >
             <FileDown className="transition-transform group-hover:translate-y-0.5" />
             Catalog
           </Button>
@@ -70,7 +79,11 @@ export function SiteHeader() {
         </div>
 
         <button
-          className="relative z-50 flex h-10 w-10 items-center justify-center rounded-md border border-border bg-card/70 lg:hidden"
+          className={`relative z-50 flex h-10 w-10 items-center justify-center rounded-md border lg:hidden ${
+            scrolled || open
+              ? "border-border bg-card/70 text-foreground"
+              : "border-forest-foreground/25 bg-forest-foreground/10 text-forest-foreground"
+          }`}
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
