@@ -172,7 +172,7 @@ function Field({
   label: string;
   type?: string;
   required?: boolean;
-  defaultValue?: string;
+  defaultValue?: string | undefined;
 }) {
   return (
     <div className="grid gap-1.5">
