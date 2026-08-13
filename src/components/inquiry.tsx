@@ -24,7 +24,13 @@ import { CATEGORIES, CONTACT, whatsappLink } from "@/lib/site";
 
 type Mode = "inquiry" | "quote";
 
-type InquiryState = { open: boolean; mode: Mode; product?: string; category?: string };
+type InquiryState = {
+  open: boolean;
+  mode: Mode;
+  product?: string | undefined;
+  category?: string | undefined;
+};
+
 
 type Ctx = {
   openInquiry: (opts?: { mode?: Mode; product?: string; category?: string }) => void;

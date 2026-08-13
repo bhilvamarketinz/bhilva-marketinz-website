@@ -16,13 +16,25 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        brand:
+          "bg-primary text-primary-foreground shadow-[var(--shadow-elegant)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/92",
+        forest:
+          "bg-forest text-forest-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-forest/90",
+        onDark:
+          "border border-forest-foreground/25 bg-forest-foreground/5 text-forest-foreground backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-forest-foreground/12",
+        whatsapp:
+          "bg-leaf text-charcoal transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105",
+        quiet:
+          "border border-border bg-card text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40",
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
-        lg: "h-10 rounded-md px-8",
+        lg: "h-11 rounded-md px-7",
+        xl: "h-12 rounded-md px-8 text-[0.95rem]",
         icon: "h-9 w-9",
       },
+
     },
     defaultVariants: {
       variant: "default",
