@@ -8,9 +8,9 @@ import { useInquiry } from "@/components/inquiry";
 import { CATEGORIES, type Category } from "@/lib/site";
 
 const toneClass: Record<Category["tone"], string> = {
-  light: "from-background/95 via-background/45",
-  dark: "from-charcoal/95 via-charcoal/50",
-  warm: "from-forest/90 via-forest/40",
+  light: "from-background via-background/88 to-40%",
+  dark: "from-charcoal via-charcoal/85 to-45%",
+  warm: "from-forest via-forest/85 to-45%",
 };
 
 export function CategoryShowcase() {
