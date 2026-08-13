@@ -33,7 +33,11 @@ type InquiryState = {
 
 
 type Ctx = {
-  openInquiry: (opts?: { mode?: Mode; product?: string; category?: string }) => void;
+  openInquiry: (opts?: {
+    mode?: Mode | undefined;
+    product?: string | undefined;
+    category?: string | undefined;
+  }) => void;
 };
 
 const InquiryContext = createContext<Ctx>({ openInquiry: () => {} });
