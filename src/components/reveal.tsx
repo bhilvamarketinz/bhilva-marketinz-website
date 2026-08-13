@@ -54,14 +54,8 @@ export function MaskedImage({
   priority?: boolean;
 }) {
   return (
-    <motion.div
-      className={`relative overflow-hidden ${className ?? ""}`}
-      initial={{ clipPath: "inset(0 0 100% 0)" }}
-      whileInView={{ clipPath: "inset(0 0 0% 0)" }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 1, ease: EASE }}
-    >
-      <img
+    <div className={`relative overflow-hidden ${className ?? ""}`}>
+      <motion.img
         src={src}
         alt={alt}
         width={width}
@@ -69,8 +63,20 @@ export function MaskedImage({
         loading={priority ? "eager" : "lazy"}
         decoding="async"
         className={`h-full w-full object-cover ${imgClassName ?? ""}`}
+        initial={{ scale: 1.12, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 1.1, ease: EASE }}
       />
-    </motion.div>
+      <motion.span
+        aria-hidden="true"
+        className="absolute inset-0 origin-bottom bg-forest"
+        initial={{ scaleY: 1 }}
+        whileInView={{ scaleY: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.9, ease: EASE }}
+      />
+    </div>
   );
 }
 
