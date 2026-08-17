@@ -40,7 +40,7 @@
   --font-display: "Fraunces", ui-serif, Georgia, serif;
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --shadow-elegant: 0 24px 60px -28px color-mix(in oklab, var(--forest) 45%, transparent);
-  --shadow-lift: 0 32px 80px -32px color-mix(in oklab, var(--charcoal) 55%, transparent);
+  --shadow-lift: 0 32px 80px -32px color-mix(in oklab, var(--forest-foreground) 30%, transparent);
 }
 
 :root {
