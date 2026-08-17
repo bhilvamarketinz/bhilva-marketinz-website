@@ -166,7 +166,7 @@ function Hero() {
           className="mt-14 flex flex-wrap gap-x-8 gap-y-3 border-t border-forest-foreground/15 pt-6"
         >
           {CATEGORIES.map((c) => (
-            <li key={c.slug} className="eyebrow text-forest-foreground/55">
+            <li key={c.slug} className="eyebrow text-forest-foreground/70">
               {c.name}
             </li>
           ))}
