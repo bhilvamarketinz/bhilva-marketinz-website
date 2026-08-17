@@ -93,8 +93,8 @@ function Hero() {
           fetchPriority="high"
           className="h-full w-full scale-105 object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/85 to-charcoal/25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-charcoal/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/92 to-charcoal/45" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/35 to-charcoal/70" />
       </motion.div>
 
       <motion.div
