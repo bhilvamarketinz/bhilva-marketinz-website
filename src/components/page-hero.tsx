@@ -18,10 +18,10 @@ export function PageHero({
           src={image}
           alt=""
           aria-hidden="true"
-          className="h-full w-full object-cover opacity-45"
+          className="h-full w-full object-cover opacity-30"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/90 to-charcoal/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/92 to-charcoal/55" />
       </div>
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <motion.p
