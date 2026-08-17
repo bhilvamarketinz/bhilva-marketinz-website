@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 import logoAsset from "@/assets/bhilva-logo.jpg.asset.json";
 
-export function LeafMark({ className = "h-9 w-9" }: { className?: string }) {
+export function LeafMark({ className = "h-11 w-11" }: { className?: string }) {
   return (
     <img
       src={logoAsset.url}
