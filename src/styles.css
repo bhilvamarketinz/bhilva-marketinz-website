@@ -58,10 +58,11 @@
   --primary: oklch(0.52 0.135 148);
   --primary-foreground: oklch(0.99 0.005 120);
 
-  --forest: oklch(0.27 0.055 155);
-  --forest-foreground: oklch(0.96 0.012 120);
-  --leaf: oklch(0.68 0.15 145);
-  --charcoal: oklch(0.24 0.008 120);
+  /* Light, creamy surfaces replace the previous dark sections */
+  --forest: oklch(0.958 0.016 95);
+  --forest-foreground: oklch(0.26 0.035 155);
+  --leaf: oklch(0.62 0.14 146);
+  --charcoal: oklch(0.982 0.012 95);
   --sand: oklch(0.955 0.012 100);
   --brass: oklch(0.74 0.075 85);
 
