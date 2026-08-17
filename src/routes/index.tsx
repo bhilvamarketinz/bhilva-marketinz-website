@@ -93,8 +93,8 @@ function Hero() {
           fetchPriority="high"
           className="h-full w-full scale-105 object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/85 to-charcoal/25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-charcoal/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/92 to-charcoal/45" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/35 to-charcoal/70" />
       </motion.div>
 
       <motion.div
@@ -166,7 +166,7 @@ function Hero() {
           className="mt-14 flex flex-wrap gap-x-8 gap-y-3 border-t border-forest-foreground/15 pt-6"
         >
           {CATEGORIES.map((c) => (
-            <li key={c.slug} className="eyebrow text-forest-foreground/55">
+            <li key={c.slug} className="eyebrow text-forest-foreground/70">
               {c.name}
             </li>
           ))}

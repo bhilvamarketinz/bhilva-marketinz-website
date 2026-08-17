@@ -23,7 +23,7 @@ const buttonVariants = cva(
         onDark:
           "border border-forest-foreground/25 bg-forest-foreground/5 text-forest-foreground backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-forest-foreground/12",
         whatsapp:
-          "bg-leaf text-charcoal transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105",
+          "bg-leaf text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:brightness-105",
         quiet:
           "border border-border bg-card text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40",
       },
