@@ -2,9 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { ArrowRight, MessageCircle, Phone, Sparkles } from "lucide-react";
-
 import heroImage from "@/assets/hero-kitchenware.jpg";
-import portfolioImage from "@/assets/supply-portfolio.jpg";
 import { Button } from "@/components/ui/button";
 import { Reveal, MaskedImage } from "@/components/reveal";
 import { CategoryShowcase } from "@/components/category-showcase";
@@ -66,7 +64,6 @@ function HomePage() {
       <AboutPreview />
       <WhyChooseSection />
       <SupplyReachSection />
-      <PortfolioSection />
       <div className="py-20 lg:py-24">
         <CatalogBand />
       </div>
@@ -226,64 +223,3 @@ function AboutPreview() {
   );
 }
 
-function PortfolioSection() {
-  const { openInquiry } = useInquiry();
-
-  return (
-    <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
-      <SectionHeading
-        eyebrow="Portfolio"
-        title="Our Supply Portfolio"
-        copy="A flexible space for real supply projects, product-supply photographs and project highlights as they are added by the business."
-      />
-
-      <div className="mt-14 grid gap-6 lg:grid-cols-[1.5fr_1fr]">
-        <MaskedImage
-          src={portfolioImage}
-          alt="Hospitality supplies prepared for dispatch"
-          width={1400}
-          height={1000}
-          className="aspect-16/10 rounded-xl"
-          imgClassName="transition-transform duration-[1.4s] hover:scale-105"
-        />
-        <div className="grid gap-6">
-          {[
-            {
-              title: "Hospitality supply",
-              body: "Kitchen and service products supplied for hotel and restaurant operations.",
-            },
-            {
-              title: "Bakery & bar supply",
-              body: "Bakery supplies and bar service products for commercial venues.",
-            },
-          ].map((item, i) => (
-            <Reveal
-              key={item.title}
-              delay={0.12 * i}
-              className="flex h-full flex-col justify-between rounded-xl border border-dashed border-border bg-card p-7"
-            >
-              <div>
-                <h3 className="text-xl">{item.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{item.body}</p>
-              </div>
-              <p className="mt-6 text-xs text-muted-foreground/70">
-                Project photographs and details can be added here.
-              </p>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-
-      <Reveal delay={0.2} className="mt-10 flex flex-wrap gap-3">
-        <Button variant="brand" size="lg" onClick={() => openInquiry({ mode: "inquiry" })}>
-          Product Inquiry
-        </Button>
-        <Button asChild variant="quiet" size="lg">
-          <a href={CONTACT.phoneHref}>
-            <Phone /> Call Now
-          </a>
-        </Button>
-      </Reveal>
-    </section>
-  );
-}
