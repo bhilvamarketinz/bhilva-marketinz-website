@@ -12,6 +12,7 @@ import { Reveal } from "@/components/reveal";
 import { FinalCtaSection, SectionHeading } from "@/components/sections";
 import { useInquiry } from "@/components/inquiry";
 import { CATEGORIES, CONTACT, whatsappLink } from "@/lib/site";
+import { sendEmail } from "@/lib/emailjs";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
