@@ -149,8 +149,8 @@ function ContactPage() {
               <Label htmlFor="c-message">Message</Label>
               <Textarea id="c-message" name="message" rows={4} />
             </div>
-            <Button type="submit" variant="brand" size="lg" className="group">
-              Send Message
+            <Button type="submit" variant="brand" size="lg" className="group" disabled={sending}>
+              {sending ? "Sending..." : "Send Message"}
               <Send className="transition-transform group-hover:translate-x-1" />
             </Button>
           </form>
