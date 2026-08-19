@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-import { ArrowRight, MessageCircle, Phone, Sparkles } from "lucide-react";
+import { ArrowRight, MessageCircle, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-kitchenware.jpg";
 import { Button } from "@/components/ui/button";
 import { Reveal, MaskedImage } from "@/components/reveal";
