@@ -10,10 +10,10 @@ export const BRAND = "Bhilva Marketinz";
 export const CONTACT = {
   phone: "97403 68339",
   phoneHref: "tel:+919740368339",
-  whatsapp: "9964335352",
-  whatsappHref: "https://wa.me/919964335352",
-  email: "trendinfkix@gmail.com",
-  emailHref: "mailto:trendinfkix@gmail.com",
+  whatsapp: "9945212306",
+  whatsappHref: "https://wa.me/919945212306",
+  email: "bhilvamarketinz@gmail.com",
+  emailHref: "mailto:bhilvamarketinz@gmail.com",
 };
 
 export function whatsappLink(message: string) {
