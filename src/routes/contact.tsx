@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { toast } from "sonner";
@@ -13,6 +13,13 @@ import { FinalCtaSection, SectionHeading } from "@/components/sections";
 import { useInquiry } from "@/components/inquiry";
 import { CATEGORIES, CONTACT, whatsappLink } from "@/lib/site";
 import { sendEmail } from "@/lib/emailjs";
+import {
+  HONEYPOT_FIELD,
+  checkRateLimit,
+  formatWait,
+  isHoneypotTripped,
+  isTooFast,
+} from "@/lib/spam-guard";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -39,11 +46,31 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   const { openInquiry } = useInquiry();
   const [sending, setSending] = useState(false);
+  const mountedAt = useRef(Date.now());
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
+
+    // Anti-spam: hidden honeypot + minimum fill time. Silently accept so bots
+    // get no signal about why the message went nowhere.
+    if (isHoneypotTripped(data) || isTooFast(mountedAt.current)) {
+      toast.success("Message sent", {
+        description: "Thanks — we've received your message and will get back to you shortly.",
+      });
+      form.reset();
+      return;
+    }
+
+    const limit = checkRateLimit("contact-form");
+    if (!limit.allowed) {
+      toast.error("Too many messages", {
+        description: `Please wait ${formatWait(limit.retryAfterMs)} before sending again, or call ${CONTACT.phone}.`,
+      });
+      return;
+    }
+
     const message = [
       "Contact message — Bhilva Marketinz",
       `Name: ${data.get("name")}`,
@@ -131,6 +158,17 @@ function ContactPage() {
             Share your requirement and we will get back to you.
           </p>
           <form className="mt-6 grid gap-4" onSubmit={onSubmit}>
+            {/* Honeypot — hidden from humans, tempting to bots */}
+            <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+              <label htmlFor="c-company-website">Do not fill this field</label>
+              <input
+                id="c-company-website"
+                name={HONEYPOT_FIELD}
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="grid gap-1.5">
                 <Label htmlFor="c-name">Name *</Label>
