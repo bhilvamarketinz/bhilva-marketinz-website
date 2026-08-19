@@ -39,11 +39,31 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   const { openInquiry } = useInquiry();
   const [sending, setSending] = useState(false);
+  const mountedAt = useRef(Date.now());
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
+
+    // Anti-spam: hidden honeypot + minimum fill time. Silently accept so bots
+    // get no signal about why the message went nowhere.
+    if (isHoneypotTripped(data) || isTooFast(mountedAt.current)) {
+      toast.success("Message sent", {
+        description: "Thanks — we've received your message and will get back to you shortly.",
+      });
+      form.reset();
+      return;
+    }
+
+    const limit = checkRateLimit("contact-form");
+    if (!limit.allowed) {
+      toast.error("Too many messages", {
+        description: `Please wait ${formatWait(limit.retryAfterMs)} before sending again, or call ${CONTACT.phone}.`,
+      });
+      return;
+    }
+
     const message = [
       "Contact message — Bhilva Marketinz",
       `Name: ${data.get("name")}`,
