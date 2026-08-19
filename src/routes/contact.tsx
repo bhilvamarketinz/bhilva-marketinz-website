@@ -158,6 +158,17 @@ function ContactPage() {
             Share your requirement and we will get back to you.
           </p>
           <form className="mt-6 grid gap-4" onSubmit={onSubmit}>
+            {/* Honeypot — hidden from humans, tempting to bots */}
+            <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+              <label htmlFor="c-company-website">Do not fill this field</label>
+              <input
+                id="c-company-website"
+                name={HONEYPOT_FIELD}
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="grid gap-1.5">
                 <Label htmlFor="c-name">Name *</Label>
