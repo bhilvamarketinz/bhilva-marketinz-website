@@ -13,6 +13,13 @@ import { FinalCtaSection, SectionHeading } from "@/components/sections";
 import { useInquiry } from "@/components/inquiry";
 import { CATEGORIES, CONTACT, whatsappLink } from "@/lib/site";
 import { sendEmail } from "@/lib/emailjs";
+import {
+  HONEYPOT_FIELD,
+  checkRateLimit,
+  formatWait,
+  isHoneypotTripped,
+  isTooFast,
+} from "@/lib/spam-guard";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
