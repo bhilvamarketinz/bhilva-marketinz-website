@@ -36,10 +36,12 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const { openInquiry } = useInquiry();
+  const [sending, setSending] = useState(false);
 
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const data = new FormData(form);
     const message = [
       "Contact message — Bhilva Marketinz",
       `Name: ${data.get("name")}`,
@@ -47,11 +49,29 @@ function ContactPage() {
       `Email: ${data.get("email") || "-"}`,
       `Message: ${data.get("message") || "-"}`,
     ].join("\n");
-    window.open(whatsappLink(message), "_blank", "noopener");
-    toast.success("Message ready to send", {
-      description: `Your details are prefilled for WhatsApp. You can also email ${CONTACT.email}.`,
-    });
-    event.currentTarget.reset();
+
+    setSending(true);
+    try {
+      await sendEmail({
+        subject: "New contact message — Bhilva Marketinz",
+        name: String(data.get("name") ?? ""),
+        phone: String(data.get("phone") ?? ""),
+        email: String(data.get("email") ?? ""),
+        message: String(data.get("message") ?? ""),
+        full_message: message,
+      });
+      toast.success("Message sent", {
+        description: "Thanks — we've received your message and will get back to you shortly.",
+      });
+      form.reset();
+    } catch {
+      window.open(whatsappLink(message), "_blank", "noopener");
+      toast.error("Could not send email", {
+        description: `We opened WhatsApp with your details instead. You can also email ${CONTACT.email}.`,
+      });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
