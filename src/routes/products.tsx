@@ -2,7 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { z } from "zod";
-import { FileDown, MessageCircle, Phone, ZoomIn } from "lucide-react";
+import { Eye, FileDown, MessageCircle, Phone, ZoomIn } from "lucide-react";
 import crockeryCatalog from "@/assets/bhilva-crockery-catalog.pdf.asset.json";
 
 import { Button } from "@/components/ui/button";
@@ -74,12 +74,20 @@ function ProductsPage() {
               PDF catalog. Sizes, materials and variants are shared on request.
             </p>
           </div>
-          <Button asChild variant="brand" size="lg" className="group shrink-0">
-            <a href={crockeryCatalog.url} download="bhilva-crockery-catalog.pdf" target="_blank" rel="noopener noreferrer">
-              <FileDown className="transition-transform duration-300 group-hover:translate-y-0.5" />
-              Download Crockery Catalog
-            </a>
-          </Button>
+          <div className="flex shrink-0 flex-wrap gap-2">
+            <Button asChild variant="quiet" size="lg">
+              <a href={crockeryCatalog.url} target="_blank" rel="noopener noreferrer">
+                <Eye />
+                View Catalog
+              </a>
+            </Button>
+            <Button asChild variant="brand" size="lg" className="group">
+              <a href={crockeryCatalog.url} download="bhilva-crockery-catalog.pdf">
+                <FileDown className="transition-transform duration-300 group-hover:translate-y-0.5" />
+                Download PDF
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
