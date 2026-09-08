@@ -12,7 +12,7 @@ export const CONTACT = {
   phoneHref: "tel:+919740368339",
   whatsapp: "9945212306",
   whatsappHref: "https://wa.me/919945212306",
-  email: "bhilvamarketinz@gmail.com",
+  email: "bhilvamarketinz86@gmail.com",
   emailHref: "mailto:bhilvamarketinz@gmail.com",
 };
 
