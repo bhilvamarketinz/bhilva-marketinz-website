@@ -14,6 +14,7 @@ export type Catalog = {
   fileName: string;
   cover: string;
   pages?: number;
+  category: "crockery" | "glassware";
 };
 
 export const CATALOGS: Catalog[] = [
