@@ -4,6 +4,8 @@ import { ArrowRight, FileDown, MessageCircle, Phone, Check } from "lucide-react"
 import { Button } from "@/components/ui/button";
 import { Reveal, staggerChild, staggerParent } from "@/components/reveal";
 import { useInquiry } from "@/components/inquiry";
+import { CatalogGrid } from "@/components/catalog-grid";
+
 import { requestCatalog } from "@/components/site-header";
 import { CONTACT, WHY_CHOOSE } from "@/lib/site";
 
@@ -173,21 +175,25 @@ export function CatalogBand() {
         <div className="relative flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
           <div className="max-w-xl">
             <p className="eyebrow text-primary">Catalog</p>
-            <h2 className="mt-3 text-2xl sm:text-3xl">Download the Product Catalog</h2>
+            <h2 className="mt-3 text-2xl sm:text-3xl">View or Download Our Catalogs</h2>
             <p className="mt-3 text-sm text-muted-foreground">
-              A complete PDF catalog of Bhilva Marketinz product categories can be connected
-              here. Request it directly and we will share the current catalog.
+              Read the complete catalog online or download the PDF. Need a category we have not
+              published yet? Request it and we will share the current catalog.
             </p>
           </div>
-          <Button variant="brand" size="xl" className="group" onClick={requestCatalog}>
+          <Button variant="quiet" size="xl" className="group" onClick={requestCatalog}>
             <FileDown className="transition-transform duration-300 group-hover:translate-y-1" />
-            Download Product Catalog
+            Request a Catalog
           </Button>
+        </div>
+        <div className="relative mt-10">
+          <CatalogGrid />
         </div>
       </Reveal>
     </section>
   );
 }
+
 
 export function FinalCtaSection() {
   const { openInquiry } = useInquiry();

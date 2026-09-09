@@ -2,8 +2,9 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { z } from "zod";
-import { Eye, FileDown, MessageCircle, Phone, ZoomIn } from "lucide-react";
-import crockeryCatalog from "@/assets/bhilva-crockery-catalog.pdf.asset.json";
+import { MessageCircle, Phone, ZoomIn } from "lucide-react";
+import { CatalogGrid } from "@/components/catalog-grid";
+
 
 import { Button } from "@/components/ui/button";
 import {
@@ -64,32 +65,21 @@ function ProductsPage() {
         image={CATEGORIES[3]!.image}
       />
 
-      <section className="mx-auto max-w-7xl px-5 pt-10 sm:px-8">
-        <div className="flex flex-col items-start justify-between gap-5 rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-elegant)] sm:flex-row sm:items-center sm:p-8">
-          <div>
-            <p className="eyebrow text-primary">Catalog</p>
-            <h2 className="mt-2 text-xl sm:text-2xl">Crockery Catalog (PDF)</h2>
-            <p className="mt-2 max-w-lg text-sm text-muted-foreground">
-              Browse our crockery range — plates, bowls and serveware — in a downloadable
-              PDF catalog. Sizes, materials and variants are shared on request.
-            </p>
-          </div>
-          <div className="flex shrink-0 flex-wrap gap-2">
-            <Button asChild variant="quiet" size="lg">
-              <a href={crockeryCatalog.url} target="_blank" rel="noopener noreferrer">
-                <Eye />
-                View Catalog
-              </a>
-            </Button>
-            <Button asChild variant="brand" size="lg" className="group">
-              <a href={crockeryCatalog.url} download="bhilva-crockery-catalog.pdf">
-                <FileDown className="transition-transform duration-300 group-hover:translate-y-0.5" />
-                Download PDF
-              </a>
-            </Button>
-          </div>
+      <section id="catalogs" className="mx-auto max-w-7xl px-5 pt-12 sm:px-8">
+        <div className="max-w-2xl">
+          <p className="eyebrow text-primary">Catalogs</p>
+          <h2 className="mt-2 text-2xl sm:text-3xl">Browse our product catalogs</h2>
+          <p className="mt-3 text-sm text-muted-foreground">
+            View the complete catalog right here in your browser, or download the PDF to share
+            with your team.
+          </p>
+        </div>
+        <div className="mt-8">
+          <CatalogGrid />
         </div>
       </section>
+
+
 
 
       <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:py-20">
