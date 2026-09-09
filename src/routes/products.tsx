@@ -74,8 +74,19 @@ function ProductsPage() {
             with your team.
           </p>
         </div>
-        <div className="mt-8">
-          <CatalogGrid />
+
+        <div className="mt-10">
+          <h3 className="text-xl font-medium text-foreground">Crockery Catalogs</h3>
+          <div className="mt-5">
+            <CatalogGrid category="crockery" />
+          </div>
+        </div>
+
+        <div className="mt-14">
+          <h3 className="text-xl font-medium text-foreground">Glassware Catalogs</h3>
+          <div className="mt-5">
+            <CatalogGrid category="glassware" />
+          </div>
         </div>
       </section>
 
