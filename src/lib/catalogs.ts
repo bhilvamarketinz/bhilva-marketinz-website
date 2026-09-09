@@ -14,6 +14,7 @@ export type Catalog = {
   fileName: string;
   cover: string;
   pages?: number;
+  category: "crockery" | "glassware";
 };
 
 export const CATALOGS: Catalog[] = [
@@ -26,6 +27,7 @@ export const CATALOGS: Catalog[] = [
     fileName: "bhilva-crockery-catalog.pdf",
     cover: crockeryCover,
     pages: 5,
+    category: "crockery",
   },
   {
     slug: "organic-series-crockery",
@@ -36,6 +38,7 @@ export const CATALOGS: Catalog[] = [
     fileName: "organic-series-crockery.pdf",
     cover: crockeryCover,
     pages: 19,
+    category: "crockery",
   },
   {
     slug: "coloured-crockery",
@@ -46,6 +49,7 @@ export const CATALOGS: Catalog[] = [
     fileName: "coloured-crockery-10-colors.pdf",
     cover: crockeryCover,
     pages: 62,
+    category: "crockery",
   },
   {
     slug: "tableware-crockery",
@@ -56,6 +60,7 @@ export const CATALOGS: Catalog[] = [
     fileName: "tableware-crockery.pdf",
     cover: crockeryCover,
     pages: 29,
+    category: "crockery",
   },
   {
     slug: "cocktail-glassware",
@@ -66,5 +71,6 @@ export const CATALOGS: Catalog[] = [
     fileName: "bhilva-cocktail-mocktail-glassware.pdf",
     cover: glasswareCover,
     pages: 44,
+    category: "glassware",
   },
 ];

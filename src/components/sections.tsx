@@ -186,8 +186,19 @@ export function CatalogBand() {
             Request a Catalog
           </Button>
         </div>
+
         <div className="relative mt-10">
-          <CatalogGrid />
+          <h3 className="text-xl font-medium text-foreground">Crockery Catalogs</h3>
+          <div className="mt-5">
+            <CatalogGrid category="crockery" />
+          </div>
+        </div>
+
+        <div className="relative mt-14">
+          <h3 className="text-xl font-medium text-foreground">Glassware Catalogs</h3>
+          <div className="mt-5">
+            <CatalogGrid category="glassware" />
+          </div>
         </div>
       </Reveal>
     </section>
