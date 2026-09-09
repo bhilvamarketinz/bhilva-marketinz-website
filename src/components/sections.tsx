@@ -4,6 +4,8 @@ import { ArrowRight, FileDown, MessageCircle, Phone, Check } from "lucide-react"
 import { Button } from "@/components/ui/button";
 import { Reveal, staggerChild, staggerParent } from "@/components/reveal";
 import { useInquiry } from "@/components/inquiry";
+import { CatalogGrid } from "@/components/catalog-grid";
+
 import { requestCatalog } from "@/components/site-header";
 import { CONTACT, WHY_CHOOSE } from "@/lib/site";
 
