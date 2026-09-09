@@ -2,8 +2,9 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { z } from "zod";
-import { Eye, FileDown, MessageCircle, Phone, ZoomIn } from "lucide-react";
-import crockeryCatalog from "@/assets/bhilva-crockery-catalog.pdf.asset.json";
+import { MessageCircle, Phone, ZoomIn } from "lucide-react";
+import { CatalogGrid } from "@/components/catalog-grid";
+
 
 import { Button } from "@/components/ui/button";
 import {
