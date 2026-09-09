@@ -12,15 +12,22 @@ import {
 import { Reveal } from "@/components/reveal";
 import { CATALOGS, type Catalog } from "@/lib/catalogs";
 
-export function CatalogGrid({ compact = false }: { compact?: boolean }) {
+export function CatalogGrid({
+  compact = false,
+  category,
+}: {
+  compact?: boolean;
+  category?: "crockery" | "glassware";
+}) {
   const [open, setOpen] = useState<Catalog | null>(null);
+  const items = category ? CATALOGS.filter((c) => c.category === category) : CATALOGS;
 
   return (
     <>
       <div
         className={`grid gap-6 ${compact ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2 lg:grid-cols-3"}`}
       >
-        {CATALOGS.map((catalog, i) => (
+        {items.map((catalog, i) => (
           <Reveal key={catalog.slug} delay={i * 0.08}>
             <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card transition-shadow duration-500 hover:shadow-[var(--shadow-lift)]">
               <button
