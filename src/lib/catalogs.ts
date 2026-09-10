@@ -152,4 +152,15 @@ export const CATALOGS: Catalog[] = [
     pages: 14,
     category: "pots-pans",
   },
+  {
+    slug: "kitchen-bar-bakery-accessories",
+    name: "Kitchen, Bar & Bakery Accessories Catalog",
+    description:
+      "Comprehensive accessories for commercial kitchens, bar service and bakery operations — tools, utensils and service essentials.",
+    file: kitchenBarBakeryPdf.url,
+    fileName: "kitchen-bar-bakery-accessories.pdf",
+    cover: kitchenBarBakeryCover,
+    pages: 136,
+    category: "kitchen-bar-bakery",
+  },
 ];
