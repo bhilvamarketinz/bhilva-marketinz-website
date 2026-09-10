@@ -12,6 +12,7 @@ import potsAndPansPdf from "@/assets/pots-and-pans.pdf.asset.json";
 import kitchenBarBakeryPdf from "@/assets/kitchen-bar-bakery-accessories.pdf.asset.json";
 import knifeKitchenPdf from "@/assets/knife-and-kitchen-accessories.pdf.asset.json";
 import tableTopMachineryPdf from "@/assets/table-top-machinery-accessories.pdf.asset.json";
+import woodenBuffetwarePdf from "@/assets/wooden-buffetware-accessories-raiser.pdf.asset.json";
 import crockeryCover from "@/assets/cat-crockery.jpg";
 import glasswareCover from "@/assets/cat-glassware.jpg";
 import bakeryCover from "@/assets/cat-bakery.jpg";
@@ -22,6 +23,7 @@ import potsPansCover from "@/assets/cat-pots-pans-hero.jpg";
 import kitchenBarBakeryCover from "@/assets/cat-kitchen-bar-bakery.jpg";
 import knifeKitchenCover from "@/assets/cat-knife-kitchen.jpg";
 import tableTopMachineryCover from "@/assets/cat-table-top-machinery.jpg";
+import woodenBuffetwareCover from "@/assets/cat-wooden-buffetware.jpg";
 
 export type Catalog = {
   slug: string;
@@ -31,7 +33,7 @@ export type Catalog = {
   fileName: string;
   cover: string;
   pages?: number;
-  category: "crockery" | "glassware" | "bakery" | "chafing" | "cutlery" | "gn-pans" | "pots-pans" | "kitchen-bar-bakery" | "knife-kitchen-accessories" | "table-top-machinery";
+  category: "crockery" | "glassware" | "bakery" | "chafing" | "cutlery" | "gn-pans" | "pots-pans" | "kitchen-bar-bakery" | "knife-kitchen-accessories" | "table-top-machinery" | "wooden-buffetware";
 };
 
 export const CATALOGS: Catalog[] = [
