@@ -7,11 +7,13 @@ import bakeryAccessoriesPdf from "@/assets/BHILVA_BAKERY_ACCESSORIES.pdf.asset.j
 import bakeryPdf from "@/assets/BHILVA_BAKERY_compressed.pdf.asset.json";
 import chafDishPdf from "@/assets/chaf-dish.pdf.asset.json";
 import cutleryPdf from "@/assets/cutlery-catalog.pdf.asset.json";
+import gnPansPdf from "@/assets/gn-pans-and-lids.pdf.asset.json";
 import crockeryCover from "@/assets/cat-crockery.jpg";
 import glasswareCover from "@/assets/cat-glassware.jpg";
 import bakeryCover from "@/assets/cat-bakery.jpg";
 import chafingCover from "@/assets/cat-chafing.jpg";
 import cutleryCover from "@/assets/cat-cutlery.jpg";
+import potsPansCover from "@/assets/cat-pots-pans.jpg";
 
 export type Catalog = {
   slug: string;
@@ -21,7 +23,7 @@ export type Catalog = {
   fileName: string;
   cover: string;
   pages?: number;
-  category: "crockery" | "glassware" | "bakery" | "chafing" | "cutlery";
+  category: "crockery" | "glassware" | "bakery" | "chafing" | "cutlery" | "gn-pans";
 };
 
 export const CATALOGS: Catalog[] = [
@@ -123,5 +125,16 @@ export const CATALOGS: Catalog[] = [
     cover: chafingCover,
     pages: 14,
     category: "chafing",
+  },
+  {
+    slug: "gn-pans-and-lids",
+    name: "GN Pans & Lids Catalog",
+    description:
+      "Gastronorm pans and lids for commercial kitchens, buffet service and food preparation.",
+    file: gnPansPdf.url,
+    fileName: "gn-pans-and-lids.pdf",
+    cover: potsPansCover,
+    pages: 6,
+    category: "gn-pans",
   },
 ];
