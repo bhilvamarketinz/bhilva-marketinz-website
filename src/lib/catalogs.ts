@@ -3,8 +3,11 @@ import organicPdf from "@/assets/organic-series-crockery.pdf.asset.json";
 import glasswarePdf from "@/assets/bhilva-cocktail-glassware.pdf.asset.json";
 import colouredPdf from "@/assets/coloured-crockery.pdf.asset.json";
 import tablewarePdf from "@/assets/tableware-crockery.pdf.asset.json";
+import bakeryAccessoriesPdf from "@/assets/BHILVA_BAKERY_ACCESSORIES.pdf.asset.json";
+import bakeryPdf from "@/assets/BHILVA_BAKERY_compressed.pdf.asset.json";
 import crockeryCover from "@/assets/cat-crockery.jpg";
 import glasswareCover from "@/assets/cat-glassware.jpg";
+import bakeryCover from "@/assets/cat-bakery.jpg";
 
 export type Catalog = {
   slug: string;
@@ -14,7 +17,7 @@ export type Catalog = {
   fileName: string;
   cover: string;
   pages?: number;
-  category: "crockery" | "glassware";
+  category: "crockery" | "glassware" | "bakery";
 };
 
 export const CATALOGS: Catalog[] = [
