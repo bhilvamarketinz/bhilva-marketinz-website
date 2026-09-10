@@ -13,6 +13,10 @@ import kitchenBarBakeryPdf from "@/assets/kitchen-bar-bakery-accessories.pdf.ass
 import knifeKitchenPdf from "@/assets/knife-and-kitchen-accessories.pdf.asset.json";
 import tableTopMachineryPdf from "@/assets/table-top-machinery-accessories.pdf.asset.json";
 import woodenBuffetwarePdf from "@/assets/wooden-buffetware-accessories-raiser.pdf.asset.json";
+import organicCatalogCover from "@/assets/catalog-organic-crockery.jpg.asset.json";
+import colouredCatalogCover from "@/assets/catalog-coloured-crockery.jpg.asset.json";
+import tablewareCatalogCover from "@/assets/catalog-tableware-crockery.jpg.asset.json";
+import bakeryAccessoriesCatalogCover from "@/assets/catalog-bakery-accessories.jpg.asset.json";
 import crockeryCover from "@/assets/cat-crockery.jpg";
 import crockeryCatalogCover from "@/assets/cat-crockery-cover.jpg";
 import glasswareCover from "@/assets/cat-glassware.jpg";
@@ -67,7 +71,7 @@ export const CATALOGS: Catalog[] = [
       "Organic-inspired crockery series with natural textures and finishes for premium dining.",
     file: organicPdf.url,
     fileName: "organic-series-crockery.pdf",
-    cover: crockeryCover,
+    cover: organicCatalogCover.url,
     pages: 19,
     category: "crockery",
   },
@@ -78,7 +82,7 @@ export const CATALOGS: Catalog[] = [
       "Crockery collections available in ten colourways for restaurants, cafes and catering.",
     file: colouredPdf.url,
     fileName: "coloured-crockery-10-colors.pdf",
-    cover: crockeryCover,
+    cover: colouredCatalogCover.url,
     pages: 62,
     category: "crockery",
   },
@@ -89,7 +93,7 @@ export const CATALOGS: Catalog[] = [
       "Complete tableware and crockery ranges for hotels, banquets and everyday service.",
     file: tablewarePdf.url,
     fileName: "tableware-crockery.pdf",
-    cover: crockeryCover,
+    cover: tablewareCatalogCover.url,
     pages: 29,
     category: "crockery",
   },
@@ -111,7 +115,7 @@ export const CATALOGS: Catalog[] = [
       "Bakery supplies, tools and equipment for commercial bakeries, cafes and patisseries.",
     file: bakeryPdf.url,
     fileName: "BHILVA_BAKERY_compressed.pdf",
-    cover: bakeryCover,
+    cover: bakeryAccessoriesCatalogCover.url,
     pages: 26,
     category: "bakery",
   },
