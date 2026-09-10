@@ -55,9 +55,9 @@ export const CATALOGS: Catalog[] = [
     description:
       "Plates, bowls and serveware for dining rooms, banquets and hospitality service.",
     file: crockeryPdf.url,
-    fileName: "bhilva-crockery-catalog.pdf",
-    cover: crockeryCover,
-    pages: 5,
+    fileName: "crockery-catalog-bhilva.pdf",
+    cover: crockeryCatalogCover,
+    pages: 45,
     category: "crockery",
   },
   {
