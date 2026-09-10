@@ -242,6 +242,13 @@ export function CatalogBand() {
             <CatalogGrid category="kitchen-bar-bakery" />
           </div>
         </div>
+
+        <div className="relative mt-14">
+          <h3 className="text-xl font-medium text-foreground">Knife & Kitchen Accessories Catalogs</h3>
+          <div className="mt-5">
+            <CatalogGrid category="knife-kitchen-accessories" />
+          </div>
+        </div>
       </Reveal>
     </section>
   );
