@@ -1,4 +1,4 @@
-import crockeryPdf from "@/assets/bhilva-crockery-catalog.pdf.asset.json";
+import crockeryPdf from "@/assets/crockery-catalog-bhilva.pdf.asset.json";
 import organicPdf from "@/assets/organic-series-crockery.pdf.asset.json";
 import glasswarePdf from "@/assets/bhilva-cocktail-glassware.pdf.asset.json";
 import colouredPdf from "@/assets/coloured-crockery.pdf.asset.json";
