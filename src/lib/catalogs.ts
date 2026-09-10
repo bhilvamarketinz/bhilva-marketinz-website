@@ -14,6 +14,7 @@ import knifeKitchenPdf from "@/assets/knife-and-kitchen-accessories.pdf.asset.js
 import tableTopMachineryPdf from "@/assets/table-top-machinery-accessories.pdf.asset.json";
 import woodenBuffetwarePdf from "@/assets/wooden-buffetware-accessories-raiser.pdf.asset.json";
 import crockeryCover from "@/assets/cat-crockery.jpg";
+import crockeryCatalogCover from "@/assets/cat-crockery-cover.jpg";
 import glasswareCover from "@/assets/cat-glassware.jpg";
 import bakeryCover from "@/assets/cat-bakery.jpg";
 import chafingCover from "@/assets/cat-chafing.jpg";
