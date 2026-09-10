@@ -25,7 +25,7 @@ export type Catalog = {
   fileName: string;
   cover: string;
   pages?: number;
-  category: "crockery" | "glassware" | "bakery" | "chafing" | "cutlery" | "gn-pans";
+  category: "crockery" | "glassware" | "bakery" | "chafing" | "cutlery" | "gn-pans" | "pots-pans";
 };
 
 export const CATALOGS: Catalog[] = [
