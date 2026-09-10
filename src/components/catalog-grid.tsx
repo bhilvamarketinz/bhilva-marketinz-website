@@ -17,7 +17,7 @@ export function CatalogGrid({
   category,
 }: {
   compact?: boolean;
-  category?: "crockery" | "glassware" | "bakery";
+  category?: "crockery" | "glassware" | "bakery" | "chafing";
 }) {
   const [open, setOpen] = useState<Catalog | null>(null);
   const items = category ? CATALOGS.filter((c) => c.category === category) : CATALOGS;
