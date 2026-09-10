@@ -178,4 +178,15 @@ export const CATALOGS: Catalog[] = [
     pages: 71,
     category: "knife-kitchen-accessories",
   },
+  {
+    slug: "table-top-machinery-accessories",
+    name: "Table Top Machinery & Accessories Catalog",
+    description:
+      "Commercial table top machinery and accessories for restaurants, hotels, catering and food service operations.",
+    file: tableTopMachineryPdf.url,
+    fileName: "table-top-machinery-accessories.pdf",
+    cover: tableTopMachineryCover,
+    pages: 27,
+    category: "table-top-machinery",
+  },
 ];
