@@ -126,4 +126,15 @@ export const CATALOGS: Catalog[] = [
     pages: 14,
     category: "chafing",
   },
+  {
+    slug: "gn-pans-and-lids",
+    name: "GN Pans & Lids Catalog",
+    description:
+      "Gastronorm pans and lids for commercial kitchens, buffet service and food preparation.",
+    file: gnPansPdf.url,
+    fileName: "gn-pans-and-lids.pdf",
+    cover: potsPansCover,
+    pages: 6,
+    category: "gn-pans",
+  },
 ];
