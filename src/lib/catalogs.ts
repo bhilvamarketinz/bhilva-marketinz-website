@@ -26,6 +26,17 @@ export type Catalog = {
 
 export const CATALOGS: Catalog[] = [
   {
+    slug: "cutlery-catalog",
+    name: "Cutlery Catalog",
+    description:
+      "Premium cutlery collections for restaurants, hotels, catering and fine dining service.",
+    file: cutleryPdf.url,
+    fileName: "cutlery-catalog.pdf",
+    cover: cutleryCover,
+    pages: 20,
+    category: "cutlery",
+  },
+  {
     slug: "crockery",
     name: "Crockery Catalog",
     description:
