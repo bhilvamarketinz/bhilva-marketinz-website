@@ -1,4 +1,4 @@
-import crockeryPdf from "@/assets/bhilva-crockery-catalog.pdf.asset.json";
+import crockeryPdf from "@/assets/crockery-catalog-bhilva.pdf.asset.json";
 import organicPdf from "@/assets/organic-series-crockery.pdf.asset.json";
 import glasswarePdf from "@/assets/bhilva-cocktail-glassware.pdf.asset.json";
 import colouredPdf from "@/assets/coloured-crockery.pdf.asset.json";
@@ -14,6 +14,7 @@ import knifeKitchenPdf from "@/assets/knife-and-kitchen-accessories.pdf.asset.js
 import tableTopMachineryPdf from "@/assets/table-top-machinery-accessories.pdf.asset.json";
 import woodenBuffetwarePdf from "@/assets/wooden-buffetware-accessories-raiser.pdf.asset.json";
 import crockeryCover from "@/assets/cat-crockery.jpg";
+import crockeryCatalogCover from "@/assets/cat-crockery-cover.jpg";
 import glasswareCover from "@/assets/cat-glassware.jpg";
 import bakeryCover from "@/assets/cat-bakery.jpg";
 import chafingCover from "@/assets/cat-chafing.jpg";
@@ -54,9 +55,9 @@ export const CATALOGS: Catalog[] = [
     description:
       "Plates, bowls and serveware for dining rooms, banquets and hospitality service.",
     file: crockeryPdf.url,
-    fileName: "bhilva-crockery-catalog.pdf",
-    cover: crockeryCover,
-    pages: 5,
+    fileName: "crockery-catalog-bhilva.pdf",
+    cover: crockeryCatalogCover,
+    pages: 45,
     category: "crockery",
   },
   {
