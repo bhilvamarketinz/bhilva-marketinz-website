@@ -223,6 +223,13 @@ export function CatalogBand() {
         </div>
 
         <div className="relative mt-14">
+          <h3 className="text-xl font-medium text-foreground">Pots & Pans Catalogs</h3>
+          <div className="mt-5">
+            <CatalogGrid category="pots-pans" />
+          </div>
+        </div>
+
+        <div className="relative mt-14">
           <h3 className="text-xl font-medium text-foreground">GN Pans & Lids Catalogs</h3>
           <div className="mt-5">
             <CatalogGrid category="gn-pans" />
