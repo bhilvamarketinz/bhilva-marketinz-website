@@ -165,4 +165,15 @@ export const CATALOGS: Catalog[] = [
     pages: 136,
     category: "kitchen-bar-bakery",
   },
+  {
+    slug: "knife-and-kitchen-accessories",
+    name: "Knife & Kitchen Accessories Catalog",
+    description:
+      "Professional kitchen knives, cutting tools and kitchen accessories for restaurants, hotels, catering and commercial food service.",
+    file: knifeKitchenPdf.url,
+    fileName: "knife-and-kitchen-accessories.pdf",
+    cover: knifeKitchenCover,
+    pages: 71,
+    category: "knife-kitchen-accessories",
+  },
 ];
