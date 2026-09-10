@@ -191,4 +191,15 @@ export const CATALOGS: Catalog[] = [
     pages: 27,
     category: "table-top-machinery",
   },
+  {
+    slug: "wooden-buffetware-accessories-raiser",
+    name: "Wooden Buffetware Accessories Raiser Catalog",
+    description:
+      "Elegant wooden buffetware risers, serving boards and display accessories for hotels, banquets, catering and buffet presentations.",
+    file: woodenBuffetwarePdf.url,
+    fileName: "WOODEN_BUFFETWARE_ACCESSORIES_RAISER.pdf",
+    cover: woodenBuffetwareCover,
+    pages: 55,
+    category: "wooden-buffetware",
+  },
 ];
