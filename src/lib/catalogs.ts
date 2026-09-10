@@ -135,8 +135,19 @@ export const CATALOGS: Catalog[] = [
       "Gastronorm pans and lids for commercial kitchens, buffet service and food preparation.",
     file: gnPansPdf.url,
     fileName: "gn-pans-and-lids.pdf",
-    cover: potsPansCover,
+    cover: gnPansCover,
     pages: 6,
     category: "gn-pans",
+  },
+  {
+    slug: "pots-and-pans",
+    name: "Pots & Pans Catalog",
+    description:
+      "Professional pots and pans for commercial kitchens, restaurants, hotels and catering operations.",
+    file: potsAndPansPdf.url,
+    fileName: "pots-and-pans.pdf",
+    cover: potsPansCover,
+    pages: 14,
+    category: "pots-pans",
   },
 ];
