@@ -123,6 +123,13 @@ function ProductsPage() {
             <CatalogGrid category="gn-pans" />
           </div>
         </div>
+
+        <div className="mt-14">
+          <h3 className="text-xl font-medium text-foreground">Kitchen, Bar & Bakery Accessories Catalogs</h3>
+          <div className="mt-5">
+            <CatalogGrid category="kitchen-bar-bakery" />
+          </div>
+        </div>
       </section>
 
 
