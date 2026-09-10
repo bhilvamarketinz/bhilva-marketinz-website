@@ -5,9 +5,11 @@ import colouredPdf from "@/assets/coloured-crockery.pdf.asset.json";
 import tablewarePdf from "@/assets/tableware-crockery.pdf.asset.json";
 import bakeryAccessoriesPdf from "@/assets/BHILVA_BAKERY_ACCESSORIES.pdf.asset.json";
 import bakeryPdf from "@/assets/BHILVA_BAKERY_compressed.pdf.asset.json";
+import chafDishPdf from "@/assets/chaf-dish.pdf.asset.json";
 import crockeryCover from "@/assets/cat-crockery.jpg";
 import glasswareCover from "@/assets/cat-glassware.jpg";
 import bakeryCover from "@/assets/cat-bakery.jpg";
+import chafingCover from "@/assets/cat-chafing.jpg";
 
 export type Catalog = {
   slug: string;
@@ -17,7 +19,7 @@ export type Catalog = {
   fileName: string;
   cover: string;
   pages?: number;
-  category: "crockery" | "glassware" | "bakery";
+  category: "crockery" | "glassware" | "bakery" | "chafing";
 };
 
 export const CATALOGS: Catalog[] = [
@@ -97,5 +99,16 @@ export const CATALOGS: Catalog[] = [
     cover: bakeryCover,
     pages: 10,
     category: "bakery",
+  },
+  {
+    slug: "chaf-dish",
+    name: "Chafing Dish Catalog",
+    description:
+      "Stainless steel chafing dishes, buffet warmers and serving equipment for hotels, catering and banquet service.",
+    file: chafDishPdf.url,
+    fileName: "CHAF_DISH.pdf",
+    cover: chafingCover,
+    pages: 14,
+    category: "chafing",
   },
 ];
