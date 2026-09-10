@@ -17,7 +17,7 @@ export function CatalogGrid({
   category,
 }: {
   compact?: boolean;
-  category?: "crockery" | "glassware" | "bakery" | "chafing" | "cutlery" | "gn-pans" | "pots-pans" | "kitchen-bar-bakery" | "knife-kitchen-accessories";
+  category?: "crockery" | "glassware" | "bakery" | "chafing" | "cutlery" | "gn-pans" | "pots-pans" | "kitchen-bar-bakery" | "knife-kitchen-accessories" | "table-top-machinery";
 }) {
   const [open, setOpen] = useState<Catalog | null>(null);
   const items = category ? CATALOGS.filter((c) => c.category === category) : CATALOGS;
