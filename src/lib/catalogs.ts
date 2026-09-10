@@ -76,4 +76,26 @@ export const CATALOGS: Catalog[] = [
     pages: 44,
     category: "glassware",
   },
+  {
+    slug: "bakery",
+    name: "Bakery Catalog",
+    description:
+      "Bakery supplies, tools and equipment for commercial bakeries, cafes and patisseries.",
+    file: bakeryPdf.url,
+    fileName: "BHILVA_BAKERY_compressed.pdf",
+    cover: bakeryCover,
+    pages: 26,
+    category: "bakery",
+  },
+  {
+    slug: "bakery-accessories",
+    name: "Bakery Accessories Catalog",
+    description:
+      "Specialist bakery accessories and service items for professional baking operations.",
+    file: bakeryAccessoriesPdf.url,
+    fileName: "BHILVA_BAKERY_ACCESSORIES.pdf",
+    cover: bakeryCover,
+    pages: 10,
+    category: "bakery",
+  },
 ];
