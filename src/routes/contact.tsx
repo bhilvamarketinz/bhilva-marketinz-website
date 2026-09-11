@@ -199,19 +199,32 @@ function ContactPage() {
         <SectionHeading
           eyebrow="Location"
           title="Find us on Google Maps"
-          copy="The business location map will be embedded here once the official Google Maps location is provided."
+          copy="Bhilva Marketinz — click below to open the exact location in Google Maps."
         />
         <Reveal delay={0.1} className="mt-10 overflow-hidden rounded-2xl border border-border bg-secondary">
-          <div className="flex min-h-64 flex-col items-center justify-center gap-3 p-12 text-center">
-            <MapPin className="size-8 text-primary" />
-            <p className="font-display text-xl">Google Maps embed</p>
-            <p className="max-w-md text-sm text-muted-foreground">
-              Share the Bhilva Marketinz Google Maps link and it will be embedded here,
-              styled into the page rather than a plain iframe.
-            </p>
+          <div className="relative aspect-[16/9] w-full sm:aspect-[21/9]">
+            <iframe
+              title="Bhilva Marketinz location map"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=77.5748217%2C13.0480114%2C77.5808217%2C13.0540114&layer=mapnik&marker=13.0510114%2C77.5778217"
+              className="absolute inset-0 h-full w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              aria-label="Map showing Bhilva Marketinz location"
+            />
+          </div>
+          <div className="flex flex-col items-center justify-center gap-3 border-t border-border bg-card p-6 text-center sm:flex-row">
+            <Button asChild variant="brand" size="sm">
+              <a
+                href="https://maps.app.goo.gl/2rsPwYEvNKGDgWhT9"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MapPin className="size-4" /> Open in Google Maps
+              </a>
+            </Button>
             <Button asChild variant="quiet" size="sm">
               <a href={CONTACT.phoneHref}>
-                <Phone /> Call for directions
+                <Phone className="size-4" /> Call for directions
               </a>
             </Button>
           </div>
