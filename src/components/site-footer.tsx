@@ -22,8 +22,16 @@ export function SiteFooter() {
               pans, glassware, barware and bakery supplies.
             </p>
             <div className="mt-6 flex gap-2">
+              <a
+                href="https://www.instagram.com/bhilva_marketinz?stkn=MWJ4bGYwNHVldjZiMA=="
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex size-9 items-center justify-center rounded-md border border-forest-foreground/20 text-forest-foreground/60 transition-colors hover:border-leaf/50 hover:text-leaf"
+              >
+                <Instagram className="size-4" />
+              </a>
               {[
-                { Icon: Instagram, label: "Instagram" },
                 { Icon: Facebook, label: "Facebook" },
                 { Icon: Linkedin, label: "LinkedIn" },
               ].map(({ Icon, label }) => (
@@ -37,7 +45,7 @@ export function SiteFooter() {
               ))}
             </div>
             <p className="mt-3 text-xs text-forest-foreground/45">
-              Social profiles will be linked once official business accounts are provided.
+              Facebook and LinkedIn profiles will be linked once official business accounts are provided.
             </p>
           </div>
 
