@@ -54,7 +54,7 @@ export function CatalogGrid({
           <Reveal
             key={catalog.slug}
             delay={i * 0.08}
-            className={useFeaturedLayout ? "sm:col-span-2 lg:col-span-3" : undefined}
+            className={useFeaturedLayout ? "sm:col-span-2 lg:col-span-3" : ""}
           >
             <article className={`group h-full overflow-hidden rounded-xl border border-border bg-card transition-shadow duration-500 hover:shadow-[var(--shadow-lift)] ${useFeaturedLayout ? "grid lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.45fr)]" : "flex flex-col"}`}>
               <button
