@@ -24,6 +24,12 @@ const featuredCategories = new Set<CatalogCategory>([
   "table-top-machinery",
 ]);
 
+const featuredCatalogs = new Set<Catalog["slug"]>([
+  "cutlery-catalog",
+  "bhilva-regular-glassware",
+  "wooden-buffetware-accessories-raiser",
+]);
+
 export function CatalogGrid({
   compact = false,
   category,
@@ -33,15 +39,23 @@ export function CatalogGrid({
 }) {
   const [open, setOpen] = useState<Catalog | null>(null);
   const items = category ? CATALOGS.filter((c) => c.category === category) : CATALOGS;
-  const useFeaturedLayout = category ? featuredCategories.has(category) : false;
+  const categoryUsesFeaturedLayout = category ? featuredCategories.has(category) : false;
 
   return (
     <>
       <div
-        className={`grid gap-6 ${useFeaturedLayout ? "grid-cols-1" : compact ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2 lg:grid-cols-3"}`}
+        className={`grid gap-6 ${categoryUsesFeaturedLayout ? "grid-cols-1" : compact ? "sm:grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2 lg:grid-cols-3"}`}
       >
-        {items.map((catalog, i) => (
-          <Reveal key={catalog.slug} delay={i * 0.08}>
+        {items.map((catalog, i) => {
+          const useFeaturedLayout =
+            categoryUsesFeaturedLayout || featuredCatalogs.has(catalog.slug);
+
+          return (
+          <Reveal
+            key={catalog.slug}
+            delay={i * 0.08}
+            className={useFeaturedLayout ? "sm:col-span-2 lg:col-span-3" : ""}
+          >
             <article className={`group h-full overflow-hidden rounded-xl border border-border bg-card transition-shadow duration-500 hover:shadow-[var(--shadow-lift)] ${useFeaturedLayout ? "grid lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.45fr)]" : "flex flex-col"}`}>
               <button
                 onClick={() => setOpen(catalog)}
@@ -104,7 +118,8 @@ export function CatalogGrid({
               </div>
             </article>
           </Reveal>
-        ))}
+          );
+        })}
       </div>
 
       <Dialog open={!!open} onOpenChange={(o) => !o && setOpen(null)}>
