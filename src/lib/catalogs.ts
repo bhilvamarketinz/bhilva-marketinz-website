@@ -1,6 +1,8 @@
 import crockeryPdf from "@/assets/crockery-catalog-bhilva.pdf.asset.json";
 import organicPdf from "@/assets/organic-series-crockery.pdf.asset.json";
 import glasswarePdf from "@/assets/bhilva-cocktail-glassware.pdf.asset.json";
+import mixologyGlasswarePdf from "@/assets/bhilva-mixology-glassware.pdf.asset.json";
+import regularGlasswarePdf from "@/assets/bhilva-regular-glassware.pdf.asset.json";
 import colouredPdf from "@/assets/coloured-crockery.pdf.asset.json";
 import tablewarePdf from "@/assets/tableware-crockery.pdf.asset.json";
 import bakeryAccessoriesPdf from "@/assets/BHILVA_BAKERY_ACCESSORIES.pdf.asset.json";
@@ -17,6 +19,8 @@ import organicCatalogCover from "@/assets/catalog-organic-crockery.jpg.asset.jso
 import colouredCatalogCover from "@/assets/catalog-coloured-crockery.jpg.asset.json";
 import tablewareCatalogCover from "@/assets/catalog-tableware-crockery.jpg.asset.json";
 import bakeryAccessoriesCatalogCover from "@/assets/catalog-bakery-accessories.jpg.asset.json";
+import mixologyGlasswareCover from "@/assets/catalog-bhilva-mixology-glassware.jpg.asset.json";
+import regularGlasswareCover from "@/assets/catalog-bhilva-regular-glassware.jpg.asset.json";
 import crockeryCover from "@/assets/cat-crockery.jpg";
 import crockeryCatalogCover from "@/assets/cat-crockery-cover.jpg";
 import glasswareCover from "@/assets/cat-glassware.jpg";
@@ -106,6 +110,28 @@ export const CATALOGS: Catalog[] = [
     fileName: "bhilva-cocktail-mocktail-glassware.pdf",
     cover: glasswareCover,
     pages: 44,
+    category: "glassware",
+  },
+  {
+    slug: "bhilva-mixology-glassware",
+    name: "Bhilva Mixology Glassware",
+    description:
+      "Specialist mixology glassware for cocktails, creative beverage presentation and professional bar service.",
+    file: mixologyGlasswarePdf.url,
+    fileName: "bhilva-mixology-glassware.pdf",
+    cover: mixologyGlasswareCover.url,
+    pages: 47,
+    category: "glassware",
+  },
+  {
+    slug: "bhilva-regular-glassware",
+    name: "Bhilva Regular Glassware",
+    description:
+      "Everyday glassware collections for restaurants, hotels, catering and beverage service.",
+    file: regularGlasswarePdf.url,
+    fileName: "bhilva-regular-glassware.pdf",
+    cover: regularGlasswareCover.url,
+    pages: 20,
     category: "glassware",
   },
   {
