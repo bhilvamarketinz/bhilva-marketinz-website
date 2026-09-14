@@ -15,7 +15,7 @@ import kitchenBarBakeryPdf from "@/assets/kitchen-bar-bakery-accessories.pdf.ass
 import knifeKitchenPdf from "@/assets/knife-and-kitchen-accessories.pdf.asset.json";
 import tableTopMachineryPdf from "@/assets/table-top-machinery-accessories.pdf.asset.json";
 import woodenBuffetwarePdf from "@/assets/wooden-buffetware-accessories-raiser.pdf.asset.json";
-import organicCatalogCover from "@/assets/catalog-organic-crockery.jpg.asset.json";
+import organicCatalogCover from "@/assets/organic-series-crockery-thumbnail.png.asset.json";
 import colouredCatalogCover from "@/assets/catalog-coloured-crockery.jpg.asset.json";
 import tablewareCatalogCover from "@/assets/catalog-tableware-crockery.jpg.asset.json";
 import bakeryAccessoriesCatalogCover from "@/assets/catalog-bakery-accessories.jpg.asset.json";
