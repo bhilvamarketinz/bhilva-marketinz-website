@@ -19,6 +19,7 @@ import organicCatalogCover from "@/assets/catalog-organic-crockery.jpg.asset.jso
 import colouredCatalogCover from "@/assets/catalog-coloured-crockery.jpg.asset.json";
 import tablewareCatalogCover from "@/assets/catalog-tableware-crockery.jpg.asset.json";
 import bakeryAccessoriesCatalogCover from "@/assets/catalog-bakery-accessories.jpg.asset.json";
+import bakeryToolsCatalogCover from "@/assets/catalog-bakery-tools.png.asset.json";
 import mixologyGlasswareCover from "@/assets/bhilva-mixology-glassware-thumbnail.png.asset.json";
 import regularGlasswareCover from "@/assets/catalog-bhilva-regular-glassware.jpg.asset.json";
 import crockeryCover from "@/assets/cat-crockery.jpg";
@@ -141,7 +142,7 @@ export const CATALOGS: Catalog[] = [
       "Bakery supplies, tools and equipment for commercial bakeries, cafes and patisseries.",
     file: bakeryPdf.url,
     fileName: "BHILVA_BAKERY_compressed.pdf",
-    cover: bakeryAccessoriesCatalogCover.url,
+    cover: bakeryToolsCatalogCover.url,
     pages: 26,
     category: "bakery",
   },
