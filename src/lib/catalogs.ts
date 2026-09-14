@@ -21,7 +21,7 @@ import tablewareCatalogCover from "@/assets/catalog-tableware-crockery.jpg.asset
 import bakeryAccessoriesCatalogCover from "@/assets/catalog-bakery-accessories.jpg.asset.json";
 import bakeryToolsCatalogCover from "@/assets/catalog-bakery-tools.png.asset.json";
 import mixologyGlasswareCover from "@/assets/bhilva-mixology-glassware-thumbnail.png.asset.json";
-import regularGlasswareCover from "@/assets/catalog-bhilva-regular-glassware.jpg.asset.json";
+import regularGlasswareCover from "@/assets/bhilva-regular-glassware-thumbnail.png.asset.json";
 import crockeryCover from "@/assets/cat-crockery.jpg";
 import crockeryCatalogCover from "@/assets/cat-crockery-cover.jpg";
 import glasswareCover from "@/assets/cat-glassware.jpg";
