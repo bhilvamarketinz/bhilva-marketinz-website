@@ -5,6 +5,7 @@ import { CatalogBand, CheckList, FinalCtaSection, SectionHeading } from "@/compo
 import { PageHero } from "@/components/page-hero";
 import { BRAND, CATEGORIES } from "@/lib/site";
 import portfolioImage from "@/assets/supply-portfolio.jpg";
+import premisesImage from "@/assets/bhilva-premises.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -36,7 +37,7 @@ function AboutPage() {
         eyebrow="About"
         title={`About ${BRAND}`}
         copy="A professional product-supply company serving requirements across kitchenware, hospitality and related commercial product categories."
-        image={CATEGORIES[1]!.image}
+        image={premisesImage.url}
       />
 
       <section className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:py-28">
