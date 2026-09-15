@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MaskedImage, Reveal } from "@/components/reveal";
 import { CatalogBand, CheckList, FinalCtaSection, SectionHeading } from "@/components/sections";
 import { PageHero } from "@/components/page-hero";
-import { BRAND, CATEGORIES } from "@/lib/site";
+import { BRAND } from "@/lib/site";
 import portfolioImage from "@/assets/supply-portfolio.jpg";
 import premisesImage from "@/assets/bhilva-premises.png.asset.json";
 
