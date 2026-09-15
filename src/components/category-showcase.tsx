@@ -20,7 +20,7 @@ export function CategoryShowcase() {
         <Reveal className="max-w-2xl">
           <p className="eyebrow text-primary">Product Categories</p>
           <h2 className="mt-3 text-3xl leading-[1.1] sm:text-4xl lg:text-5xl">
-            Six categories built for professional use
+            Multiple categories built for professional use
           </h2>
           <p className="mt-4 text-muted-foreground">
             Each category is supplied for restaurants, hotels, bakeries, bars and commercial
