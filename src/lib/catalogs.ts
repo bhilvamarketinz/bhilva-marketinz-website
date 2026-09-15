@@ -17,7 +17,7 @@ import tableTopMachineryPdf from "@/assets/table-top-machinery-accessories.pdf.a
 import woodenBuffetwarePdf from "@/assets/wooden-buffetware-accessories-raiser.pdf.asset.json";
 import organicCatalogCover from "@/assets/organic-series-crockery-thumbnail.png.asset.json";
 import colouredCatalogCover from "@/assets/coloured-crockery-thumbnail.png.asset.json";
-import tablewareCatalogCover from "@/assets/catalog-tableware-crockery.jpg.asset.json";
+import tablewareCatalogCover from "@/assets/tableware-crockery-thumbnail.png.asset.json";
 import bakeryAccessoriesCatalogCover from "@/assets/catalog-bakery-accessories.jpg.asset.json";
 import bakeryToolsCatalogCover from "@/assets/catalog-bakery-tools.png.asset.json";
 import mixologyGlasswareCover from "@/assets/bhilva-mixology-glassware-thumbnail.png.asset.json";
