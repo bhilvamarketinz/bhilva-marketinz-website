@@ -2,8 +2,8 @@ import emailjs from "@emailjs/browser";
 
 export const EMAILJS = {
   publicKey: "aLlN6EcHszMnWZvmd",
-  serviceId: "service_95o4lmm",
-  templateId: "template_nu238dw",
+  serviceId: "service_3zd6e9i",
+  templateId: "template_wn3559j",
 };
 
 export type EmailPayload = Record<string, string>;
