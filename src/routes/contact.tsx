@@ -1,11 +1,12 @@
 import { useRef, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { CheckCircle2, CircleAlert, FlaskConical, LoaderCircle, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 import { Textarea } from "@/components/ui/textarea";
 import { PageHero } from "@/components/page-hero";
 import { Reveal } from "@/components/reveal";
@@ -20,6 +21,53 @@ import {
   isHoneypotTripped,
   isTooFast,
 } from "@/lib/spam-guard";
+
+type ContactEmailPayload = {
+  subject: string;
+  name: string;
+  phone: string;
+  email: string;
+  message: string;
+  full_message: string;
+};
+
+type DeliveryLog =
+  | { status: "sending"; message: string }
+  | { status: "success"; message: string }
+  | { status: "failure"; message: string };
+
+function createEmailPayload(data: FormData): ContactEmailPayload {
+  const name = String(data.get("name") ?? "");
+  const phone = String(data.get("phone") ?? "");
+  const email = String(data.get("email") ?? "");
+  const message = String(data.get("message") ?? "");
+  const fullMessage = [
+    "Contact message — Bhilva Marketinz",
+    `Name: ${name}`,
+    `Phone: ${phone}`,
+    `Email: ${email || "-"}`,
+    `Message: ${message || "-"}`,
+  ].join("\n");
+
+  return {
+    subject: "New contact message — Bhilva Marketinz",
+    name,
+    phone,
+    email,
+    message,
+    full_message: fullMessage,
+  };
+}
+
+function describeEmailError(error: unknown) {
+  if (error instanceof Error) return error.message;
+  if (typeof error === "object" && error !== null) {
+    const details = error as { status?: unknown; text?: unknown };
+    const status = typeof details.status === "number" ? `Status ${details.status}` : "Request failed";
+    return typeof details.text === "string" ? `${status}: ${details.text}` : status;
+  }
+  return "Request failed without additional details.";
+}
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -46,7 +94,17 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   const { openInquiry } = useInquiry();
   const [sending, setSending] = useState(false);
+  const [testMode, setTestMode] = useState(false);
+  const [testPayload, setTestPayload] = useState<ContactEmailPayload>(() =>
+    createEmailPayload(new FormData()),
+  );
+  const [deliveryLog, setDeliveryLog] = useState<DeliveryLog | null>(null);
   const mountedAt = useRef(Date.now());
+  const contactFormRef = useRef<HTMLFormElement>(null);
+
+  const updateTestPayload = (form: HTMLFormElement) => {
+    if (testMode) setTestPayload(createEmailPayload(new FormData(form)));
+  };
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -71,29 +129,30 @@ function ContactPage() {
       return;
     }
 
-    const message = [
-      "Contact message — Bhilva Marketinz",
-      `Name: ${data.get("name")}`,
-      `Phone: ${data.get("phone")}`,
-      `Email: ${data.get("email") || "-"}`,
-      `Message: ${data.get("message") || "-"}`,
-    ].join("\n");
+    const payload = createEmailPayload(data);
+    const message = payload.full_message;
 
     setSending(true);
+    if (testMode) {
+      setTestPayload(payload);
+      setDeliveryLog({ status: "sending", message: "Sending this payload to EmailJS…" });
+    }
     try {
-      await sendEmail({
-        subject: "New contact message — Bhilva Marketinz",
-        name: String(data.get("name") ?? ""),
-        phone: String(data.get("phone") ?? ""),
-        email: String(data.get("email") ?? ""),
-        message: String(data.get("message") ?? ""),
-        full_message: message,
-      });
+      const response = await sendEmail(payload);
+      if (testMode) {
+        setDeliveryLog({
+          status: "success",
+          message: `EmailJS accepted the message — status ${response.status}, response “${response.text}”.`,
+        });
+      }
       toast.success("Message sent", {
         description: "Thanks — we've received your message and will get back to you shortly.",
       });
-      form.reset();
-    } catch {
+      if (!testMode) form.reset();
+    } catch (error) {
+      if (testMode) {
+        setDeliveryLog({ status: "failure", message: describeEmailError(error) });
+      }
       window.open(whatsappLink(message), "_blank", "noopener");
       toast.error("Could not send email", {
         description: `We opened WhatsApp with your details instead. You can also email ${CONTACT.email}.`,
@@ -157,7 +216,12 @@ function ContactPage() {
           <p className="mt-2 text-sm text-muted-foreground">
             Share your requirement and we will get back to you.
           </p>
-          <form className="mt-6 grid gap-4" onSubmit={onSubmit}>
+          <form
+            ref={contactFormRef}
+            className="mt-6 grid gap-4"
+            onSubmit={onSubmit}
+            onInput={(event) => updateTestPayload(event.currentTarget)}
+          >
             {/* Honeypot — hidden from humans, tempting to bots */}
             <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
               <label htmlFor="c-company-website">Do not fill this field</label>
@@ -186,6 +250,55 @@ function ContactPage() {
             <div className="grid gap-1.5">
               <Label htmlFor="c-message">Message</Label>
               <Textarea id="c-message" name="message" rows={4} />
+            </div>
+            <div className="rounded-lg border border-border bg-secondary/45 p-4">
+              <div className="flex items-center justify-between gap-4">
+                <Label htmlFor="email-test-mode" className="flex items-center gap-2 text-sm font-semibold">
+                  <FlaskConical className="size-4 text-primary" />
+                  EmailJS test mode
+                </Label>
+                <Switch
+                  id="email-test-mode"
+                  checked={testMode}
+                  onCheckedChange={(checked) => {
+                    setTestMode(checked);
+                    setDeliveryLog(null);
+                    if (checked && contactFormRef.current) {
+                      setTestPayload(createEmailPayload(new FormData(contactFormRef.current)));
+                    }
+                  }}
+                  aria-label="Toggle EmailJS test mode"
+                />
+              </div>
+              {testMode ? (
+                <div className="mt-4 grid gap-3">
+                  <div>
+                    <p className="text-xs font-semibold text-foreground">Exact EmailJS payload</p>
+                    <pre className="mt-2 max-h-64 overflow-auto whitespace-pre-wrap break-words rounded-md border border-border bg-card p-3 font-mono text-xs leading-5 text-card-foreground">
+                      {JSON.stringify(testPayload, null, 2)}
+                    </pre>
+                  </div>
+                  {deliveryLog ? (
+                    <div
+                      role="status"
+                      aria-live="polite"
+                      className="flex items-start gap-2 rounded-md border border-border bg-card p-3 text-sm text-card-foreground"
+                    >
+                      {deliveryLog.status === "sending" ? (
+                        <LoaderCircle className="mt-0.5 size-4 shrink-0 animate-spin text-primary" />
+                      ) : deliveryLog.status === "success" ? (
+                        <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
+                      ) : (
+                        <CircleAlert className="mt-0.5 size-4 shrink-0 text-destructive" />
+                      )}
+                      <span>
+                        <strong className="capitalize">{deliveryLog.status}:</strong>{" "}
+                        {deliveryLog.message}
+                      </span>
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
             </div>
             <Button type="submit" variant="brand" size="lg" className="group" disabled={sending}>
               {sending ? "Sending..." : "Send Message"}
