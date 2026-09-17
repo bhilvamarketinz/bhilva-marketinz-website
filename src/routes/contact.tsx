@@ -100,6 +100,7 @@ function ContactPage() {
   );
   const [deliveryLog, setDeliveryLog] = useState<DeliveryLog | null>(null);
   const mountedAt = useRef(Date.now());
+  const contactFormRef = useRef<HTMLFormElement>(null);
 
   const updateTestPayload = (form: HTMLFormElement) => {
     if (testMode) setTestPayload(createEmailPayload(new FormData(form)));
@@ -216,6 +217,7 @@ function ContactPage() {
             Share your requirement and we will get back to you.
           </p>
           <form
+            ref={contactFormRef}
             className="mt-6 grid gap-4"
             onSubmit={onSubmit}
             onInput={(event) => updateTestPayload(event.currentTarget)}
@@ -261,6 +263,9 @@ function ContactPage() {
                   onCheckedChange={(checked) => {
                     setTestMode(checked);
                     setDeliveryLog(null);
+                    if (checked && contactFormRef.current) {
+                      setTestPayload(createEmailPayload(new FormData(contactFormRef.current)));
+                    }
                   }}
                   aria-label="Toggle EmailJS test mode"
                 />
